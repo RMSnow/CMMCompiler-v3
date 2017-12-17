@@ -8,4 +8,5 @@ import java.io.File;
 public class Conf {
     public static File interFile = new File("out/3-address-code.i");
     public static File machineFile = new File("out/vm-code.o");
+    public static File outputFile = new File("out/outcome.txt");
 }

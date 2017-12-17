@@ -12,9 +12,9 @@ import java.util.Hashtable;
 import java.util.Scanner;
 
 /**
- * 更低层的中间代码（四元式表示）
+ * 生成更低层的中间代码（四元式表示）
  */
-public class IR {
+public class IRGenerator {
     private Parser parser;
     private Scanner scanner;
     private Env tempEnv;
@@ -24,7 +24,7 @@ public class IR {
 
     public static PrintWriter out;      //输出至文件
 
-    public IR(Parser parser) throws IOException {
+    public IRGenerator(Parser parser) throws IOException {
         this.parser = parser;
         this.scanner = new Scanner(parser.program());
         this.tempEnv = parser.tempEnv;
@@ -64,8 +64,6 @@ public class IR {
 
             switch (firstChar) {
                 case 'L':       //标签
-                    //out.println(tempLine);
-                    //labelToLine.put(tempLine, String.valueOf(interLineNum));
                     break;
                 case 'B':       //新的作用域
                     out.println(tempLine);
@@ -188,10 +186,12 @@ public class IR {
      * @param s4
      */
     public void printFormat(String s1, String s2, String s3, String s4) {
+        new FourTermsCode(s1, s2, s3, s4, interLineNum);
         out.printf("%4s\t%10s\t%4s\t%4s\t%4s", interLineNum++, s1, s2, s3, s4);
     }
 
     public void printFormat(String s1, String s2, String s3, String s4, boolean isRel) {
+        new FourTermsCode(s1, s2, s3, s4, -1);
         out.printf("%4s\t%10s\t%4s\t%4s\t%4s", " ", s1, s2, s3, s4);
     }
 
