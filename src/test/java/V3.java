@@ -1,7 +1,6 @@
-import v2.lexer.Lexer;
-import v3.Conf;
-import v3.inter.IR;
-import v3.parser.Parser;
+import lexer.Lexer;
+import inter.IR;
+import parser.Parser;
 
 import java.io.IOException;
 import java.util.Scanner;

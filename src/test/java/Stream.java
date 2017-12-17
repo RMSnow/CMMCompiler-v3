@@ -1,10 +1,6 @@
-import v2.lexer.Lexer;
-import v3.Conf;
-import v3.parser.Parser;
+import conf.Conf;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
