@@ -23,12 +23,12 @@ public class If extends Stmt{
     }
 
     @Override
-    public void gen(int a, int b) {
-        Parser.out.println("BEGIN---------------------------");
+    public void gen(int b, int a) {
+        Parser.out.println("BEGIN");
         int label = newlabel();     //stmt的代码的标号
         expr.jumping(0, a);     //为真时控制流穿越，为假时转向a
         emitlabel(label);
         stmt.gen(label, a);
-        Parser.out.println("END-----------------------------");
+        Parser.out.println("END");
     }
 }

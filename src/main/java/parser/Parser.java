@@ -57,7 +57,7 @@ public class Parser {
      * 语法分析的入口: Program -> Stmts
      */
     public File program() throws IOException {
-//        tempEnv = new Env(null, null);
+        tempEnv = new Env(null);
         Stmt s = stmts();
 
         //生成三地址码，并输出至文件
@@ -193,15 +193,16 @@ public class Parser {
         match('{');
 
         //新建符号表结点
-//        tempEnv.next = new Env(tempEnv, null);
-//        tempEnv = tempEnv.next;
+        Env child = new Env(tempEnv);
+        tempEnv.addChild(child);
+        tempEnv = child;
 
         Stmt s = stmts();
 
         match('}');
 
         //返回原来的符号表结点
-//        tempEnv = tempEnv.prev;
+        tempEnv = tempEnv.parent;
 
         return s;
     }

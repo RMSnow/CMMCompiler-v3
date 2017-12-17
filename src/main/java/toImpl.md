@@ -16,17 +16,17 @@
 
 1 常见的三地址指令：  
   
-    (1) x = y op z
-    (2) x = op y
-    (3) x = y
-    (4) goto L
-    (5) if x goto L
-        if false x goto L
-    (6) if x rel y goto L
+    (1) [5] x = y op z
+    (2) [4] x = op y
+    (3) [3] x = y
+    (4) [2] goto L
+    (5) [4] if x goto L
+        [5] if false x goto L
+    (6) [6] if x rel y goto L
     (7) 过程调用与返回
-    (8) x = y[i]
-        x[i] = y
-    (9) x = &y, x = *y, *x = y
+    (8) [3] x = y[i]
+        [3] x[i] = y
+    (9) [3] x = &y, x = *y, *x = y
 
 四元式指令集：  
   
@@ -40,6 +40,8 @@
     SetElem i   y   x
 
 2. do语句的行号：从起始算起
+
+3. 符号表：存在bug（v2的case2通不过） && if语句的跳转有问题
 
 
 ### 代码生成 & 虚拟机运行

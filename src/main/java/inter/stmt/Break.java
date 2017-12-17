@@ -18,7 +18,7 @@ public class Break extends Stmt{
     @Override
     public void gen(int b, int a) {
         emit("goto L" + stmt.after);
-        Parser.out.println("END-----------------------------");
+        Parser.out.println("END");
     }
 
     @Override

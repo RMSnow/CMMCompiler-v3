@@ -25,13 +25,13 @@ public class Do extends Stmt {
 
     @Override
     public void gen(int b, int a) {
-        Parser.out.println("BEGIN---------------------------");
+        Parser.out.println("BEGIN");
         after = a;
         int label = newlabel();     //用于bool的标号
 
         stmt.gen(b, label);
         emitlabel(label);
         bool.jumping(b, 0);
-        Parser.out.println("END-----------------------------");
+        Parser.out.println("END");
     }
 }

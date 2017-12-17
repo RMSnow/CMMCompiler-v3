@@ -28,14 +28,14 @@ public class Node {
     }
 
     public void emitlabel(int i) {
-        Parser.out.println("L" + i + ":");
+        Parser.out.println("L" + i);
     }
 
     public void emit(String s) {
         Parser.out.printf("\t" + s);
 
         if (!printLine) {
-            Parser.out.printf("\t>>> Line " + lexLine);
+            Parser.out.printf(" >>> Line " + lexLine);
             printLine = true;       //当行号变化的时候，改为false
         }
 

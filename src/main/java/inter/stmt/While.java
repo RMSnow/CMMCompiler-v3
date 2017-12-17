@@ -28,7 +28,7 @@ public class While extends Stmt {
 
     @Override
     public void gen(int b, int a) {
-        Parser.out.println("BEGIN---------------------------");
+        Parser.out.println("BEGIN");
         after = a;      //保存下一条指令的标号
         bool.jumping(0, a);
 
@@ -36,7 +36,7 @@ public class While extends Stmt {
         emitlabel(label);
         stmt.gen(label, b);
         emit("goto L" + b);
-        Parser.out.println("END-----------------------------");
+        Parser.out.println("END");
     }
 
     @Override
