@@ -1,8 +1,5 @@
 package v3.vm;
 
-import v3.inter.FourTermsCode;
-import v3.inter.IRGenerator;
-
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.Iterator;

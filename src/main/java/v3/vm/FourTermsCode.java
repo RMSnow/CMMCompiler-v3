@@ -1,4 +1,4 @@
-package v3.inter;
+package v3.vm;
 
 import java.util.Hashtable;
 

@@ -1,5 +1,5 @@
 import v3.lexer.Lexer;
-import v3.inter.IRGenerator;
+import v3.vm.IRGenerator;
 import v3.parser.Parser;
 import v3.vm.CMMCompiler;
 
@@ -25,16 +25,5 @@ public class V3 {
         CMMCompiler compiler = new CMMCompiler(inter);
 
         compiler.getOutcome();
-
-//        Scanner scanner = new Scanner(v3.inter.getVMCode());
-//        while (scanner.hasNext()){
-//            System.out.println(scanner.nextLine());
-//        }
-
-//        scanner = new Scanner(compiler.getOutcome());
-//        while (scanner.hasNext()){
-//            System.out.println(scanner.nextLine());
-//        }
-
     }
 }

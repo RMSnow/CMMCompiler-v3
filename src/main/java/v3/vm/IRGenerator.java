@@ -1,9 +1,8 @@
-package v3.inter;
+package v3.vm;
 
 import v3.conf.Conf;
 import v3.parser.Parser;
 import v3.symbols.Env;
-import v3.vm.ISA;
 
 import java.io.File;
 import java.io.IOException;

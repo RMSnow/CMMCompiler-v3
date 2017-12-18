@@ -1,6 +1,5 @@
 package v3.vm;
 
-import v3.inter.FourTermsCode;
 import v3.inter.expr.Id;
 import v3.lexer.Word;
 import v3.symbols.Env;

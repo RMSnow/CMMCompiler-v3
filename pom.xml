@@ -24,7 +24,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.Client</mainClass>
+                            <mainClass>v1.Client</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
