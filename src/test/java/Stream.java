@@ -1,4 +1,4 @@
-import conf.Conf;
+import v3.conf.Conf;
 
 import java.io.IOException;
 import java.util.Scanner;

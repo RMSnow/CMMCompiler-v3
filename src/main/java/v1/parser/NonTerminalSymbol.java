@@ -1,0 +1,27 @@
+package v1.parser;
+
+public enum NonTerminalSymbol {
+    Root,
+    Stmt,
+    StmtBlock,
+    VarDecl,
+    Type,
+    VarList,
+    VarDeclAssign,
+    IFStmt,
+    WhileStmt,
+    BreakStmt,
+    ContinueStmt,
+    ReadStmt,
+    WriteStmt,
+    AssignStmt,
+    Value,
+    Expr1,
+    Expr2,
+    Expr3,
+    Expr4,
+    Expr5,
+    Expr6,
+    Expr7,
+    Expr8,
+}

@@ -1,7 +1,7 @@
-import lexer.Lexer;
-import inter.IRGenerator;
-import parser.Parser;
-import vm.CMMCompiler;
+import v3.lexer.Lexer;
+import v3.inter.IRGenerator;
+import v3.parser.Parser;
+import v3.vm.CMMCompiler;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class V3 {
 
         compiler.getOutcome();
 
-//        Scanner scanner = new Scanner(inter.getVMCode());
+//        Scanner scanner = new Scanner(v3.inter.getVMCode());
 //        while (scanner.hasNext()){
 //            System.out.println(scanner.nextLine());
 //        }
