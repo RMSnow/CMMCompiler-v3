@@ -1,11 +1,13 @@
 package vm;
 
 import conf.Conf;
+import inter.FourTermsCode;
 import inter.IRGenerator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.PrintStream;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -13,39 +15,54 @@ import java.util.Scanner;
  */
 public class CMMCompiler {
     private IRGenerator inter;
-    private Scanner scanner;
+    //private Scanner scanner;
 
-    public static PrintWriter out;      //输出至文件
+    public static PrintStream out;      //输出-------
 
     public CMMCompiler(IRGenerator inter) throws FileNotFoundException {
         this.inter = inter;
-        this.scanner = new Scanner(inter.getVMCode());
+        //this.scanner = new Scanner(inter.getVMCode());
 
-        out = new PrintWriter(Conf.outputFile);
+        this.inter.getVMCode();
+
+        out = System.out;
     }
 
-    public File getOutcome(){
-        while (scanner.hasNext()) {
-            String tempLine = scanner.nextLine();
-            char firstChar = tempLine.charAt(0);
+    /**
+     * 计算四元式的值
+     */
+    public void getOutcome(){
+//        while (scanner.hasNext()) {
+//            String tempLine = scanner.nextLine();
+//            char firstChar = tempLine.charAt(0);
+//
+//            switch (firstChar) {
+//                case 'L':       //行号
+//
+//                    break;
+//                case 'B':       //新的作用域
+//
+//                    break;
+//                case 'E':       //作用域结束
+//
+//                    break;
+//                default:        //四元式
+//
+//            }
+//        }
 
-            switch (firstChar) {
-                case 'L':       //行号
 
-                    break;
-                case 'B':       //新的作用域
+        //out.flush();
+        //return Conf.machineFile;
 
-                    break;
-                case 'E':       //作用域结束
-
-                    break;
-                default:        //四元式
-
-            }
+        Iterator iterator = FourTermsCode.codeChunk.keySet().iterator();
+        while (iterator.hasNext()){
+            int lineNum = (int) iterator.next();
+            FourTermsCodeHandler.getValueOfCode(lineNum);
         }
+    }
 
+    public void getOutcome(int toLine){
 
-        out.flush();
-        return Conf.machineFile;
     }
 }

@@ -57,6 +57,11 @@ public class IRGenerator {
         }
     }
 
+    /**
+     * 四元式生成器的入口
+     *
+     * @return 四元式代码文件
+     */
     public File getVMCode() {
         while (scanner.hasNext()) {
             String tempLine = scanner.nextLine();
@@ -85,6 +90,11 @@ public class IRGenerator {
         return Conf.machineFile;
     }
 
+    /**
+     * 处理三地址代码
+     *
+     * @param line
+     */
     public void handleCode(String line) {
         String[] tokens = line.split(" ");
         int endPos = tokens.length - 1;
@@ -195,6 +205,12 @@ public class IRGenerator {
         out.printf("%4s\t%10s\t%4s\t%4s\t%4s", " ", s1, s2, s3, s4);
     }
 
+    /**
+     * 打印源文件中的行号
+     *
+     * @param hasLineNum
+     * @param lineNum
+     */
     public void printLineNum(boolean hasLineNum, String lineNum) {
         if (hasLineNum) {
             out.println("\t>>> Line " + lineNum);

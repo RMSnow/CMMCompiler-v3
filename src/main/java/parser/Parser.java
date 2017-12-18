@@ -219,8 +219,9 @@ public class Parser {
         match(';');
 
         //向符号表中添加信息
-        Id id = new Id((Word) tok, p, used);
-        tempEnv.put(tok, id);
+        Word word = (Word) tok;
+        Id id = new Id(word, p, used);
+        tempEnv.put(word, id);
         used = used + p.width;
 
         return Stmt.Null;
@@ -273,7 +274,8 @@ public class Parser {
         Stmt stmt;
         Token t = look;
         match(Tag.ID);
-        Id id = tempEnv.get(t);
+        Word word = (Word)t;
+        Id id = tempEnv.get(word.lexeme);
 
         if (id == null) {
             error(t.toString() + " undeclared");
@@ -467,7 +469,7 @@ public class Parser {
 
             case Tag.ID:
                 String s = look.toString();
-                Id id = tempEnv.get(look);
+                Id id = tempEnv.get(s);
 
                 if (id == null) {
                     error(look.toString() + " undeclared");

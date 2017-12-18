@@ -2,6 +2,7 @@ package symbols;
 
 import inter.expr.Id;
 import lexer.Token;
+import lexer.Word;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -14,26 +15,26 @@ public class Env {
     private int childIndex = 0;     //孩子列表中访问的索引
     public Env parent;     //父结点
 
-    private Hashtable table;
+    private Hashtable<String, Id> table;
 
     public Env(Env parent) {
         this.parent = parent;
         table = new Hashtable();
     }
 
-    public void put(Token w, Id i) {
-        table.put(w, i);
+    public void put(Word w, Id i) {
+        table.put(w.lexeme, i);
     }
 
     /**
      * 遍历父亲结点
      *
-     * @param w
+     * @param key
      * @return
      */
-    public Id get(Token w) {
+    public Id get(String key) {
         for (Env e = this; e != null; e = e.parent) {
-            Id found = (Id) (e.table.get(w));
+            Id found = (Id) (e.table.get(key));
             if (found != null) {
                 return found;
             }
